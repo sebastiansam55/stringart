@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Stringart</title>
+    <link rel="stylesheet" href="stringart.css">
+    <script type="text/javascript">
+			function update(color){
+				if(color == 'red'){
+					document.getElementById("red_count").innerText = document.getElementById("red").value;
+				}else if(color=='green'){
+					document.getElementById("green_count").innerText = document.getElementById("green").value;
+				}else if(color=='blue'){
+					document.getElementById("blue_count").innerText = document.getElementById("blue").value;
+				}
+			}
+		</script>
+  </head>
+  <body oncontextmenu="return false;">
+    <h1>Stringart</h1>
+    <div id="inputdiv">
+    	<span class="sliderspan">
+    		Red:
+    		<input type="range" id="red" min="0" max="255" onchange="update('red')" value="0"/>
+    		<span id="red_count">0</span>
+    	</span>
+    	<br />
+    	<span class="sliderspan">
+    		Green:
+    		<input type="range" id="green" min="0" max="255" onchange="update('green')" value="0"/>
+    		<span id="green_count">0</span>
+    	</span>
+    	<br />
+    	<span class="sliderspan">
+    		Blue: 
+    		<input type="range" id="blue" min="0" max="255" onchange="update('blue')" value="0"/>
+    		<span id="blue_count">0</span>
+    	</span>
+    	<br />
+    	<span class="axissymmetric">
+    		Axis Symmetry: 
+    		<input type="checkbox" id="axissymmetry" />
+    	</span>
+    	<br />
+    	<span class="leftrightsymmetric">
+    		Left-Right Symmetry: 
+    		<input type="checkbox" id="leftrightsymmetry" />
+    	</span>
+    	<br />
+    	<span class="topbottomsymmetric">
+    		Top-Bottom Symmetry: 
+    		<input type="checkbox" id="topbottomsymmetry" />
+    	</span>
+    </div>
+    <script type="application/dart" src="stringart.dart"></script>
+    <script src="packages/browser/dart.js"></script>
+  </body>
+</html>
